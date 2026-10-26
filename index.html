@@ -2,75 +2,187 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>USABesTRC | Tus marcas favoritas</title>
-<style>
-:root {
-  --azul: #0033A0;
-  --rojo: #FF1E2D;
-  --blanco: #FFFFFF;
-}
-* { box-sizing: border-box; }
-body {
-  margin: 0;
-  min-height: 100vh;
-  padding: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #f2f5ff;
-  font-family: Arial, sans-serif;
-  color: var(--azul);
-}
-main {
-  width: 100%;
-  max-width: 480px;
-  text-align: center;
-  background: white;
-  border: 4px solid var(--azul);
-  border-radius: 24px;
-  overflow: hidden;
-}
-header {
-  background: var(--azul);
-  color: white;
-  padding: 32px 20px;
-}
-h1 { margin: 0 0 12px; font-size: 38px; }
-header p { line-height: 1.5; }
-.links { padding: 24px; display: grid; gap: 14px; }
-a {
-  display: block;
-  padding: 17px;
-  border: 2px solid var(--azul);
-  border-radius: 12px;
-  color: var(--azul);
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: bold;
-}
-a:first-child {
-  background: var(--rojo);
-  border-color: var(--rojo);
-  color: white;
-}
-footer { padding: 0 20px 24px; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0033A0">
+  <meta name="description" content="Redes sociales y catálogo de USABesTRC.">
+  <title>USABesTRC | Tus marcas favoritas</title>
+  <style>
+    :root {
+      --blue: #0033A0;
+      --red: #FF1E2D;
+      --white: #FFFFFF;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 28px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #14213d;
+      background:
+        radial-gradient(circle at 8% 10%, #ffffffb8 0 2px, transparent 3px),
+        radial-gradient(circle at 92% 22%, #ffffff8c 0 2px, transparent 3px),
+        linear-gradient(145deg, #0033A0 0%, #1658c7 36%, #ffffff 56%, #fff5f5 70%, #FF1E2D 100%);
+      background-size: 42px 42px, 54px 54px, cover;
+      background-attachment: fixed;
+    }
+    .card {
+      width: 100%;
+      max-width: 430px;
+      padding: 30px 23px 24px;
+      text-align: center;
+      border: 1px solid #ffffffcc;
+      border-radius: 26px;
+      background: #fffffff0;
+      box-shadow: 0 18px 50px #00144b40;
+      backdrop-filter: blur(8px);
+    }
+    .stars {
+      color: var(--blue);
+      letter-spacing: 7px;
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(29px, 7vw, 38px);
+      line-height: 1.1;
+      font-weight: 900;
+      letter-spacing: -.8px;
+    }
+    h1 .usa { color: var(--blue); }
+    h1 .trc { color: var(--red); }
+    .tagline {
+      margin: 11px 0 5px;
+      font-size: 17px;
+      font-weight: 700;
+    }
+    .subtitle {
+      margin: 0 0 24px;
+      color: #526078;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .links { display: grid; gap: 12px; }
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+      width: 100%;
+      min-height: 54px;
+      padding: 14px 17px;
+      border-radius: 14px;
+      text-decoration: none;
+      color: white;
+      font-weight: 750;
+      font-size: 15px;
+      box-shadow: 0 5px 12px #0c204824;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px #0c20472e;
+    }
+    .btn:focus-visible {
+      outline: 3px solid #ffcf33;
+      outline-offset: 3px;
+    }
+    .btn svg {
+      width: 22px;
+      height: 22px;
+      flex: 0 0 22px;
+      fill: currentColor;
+    }
+    .facebook { background: #1877F2; }
+    .instagram {
+      background: linear-gradient(110deg, #833AB4, #E1306C, #F77737);
+    }
+    .catalog { background: var(--blue); }
+    .whatsapp { background: #20B95A; }
+    .tiktok { background: #111111; }
+    .footer {
+      margin: 22px 0 0;
+      font-size: 11px;
+      color: #657089;
+      letter-spacing: .5px;
+    }
+    .flag {
+      height: 5px;
+      width: 94px;
+      margin: 16px auto 0;
+      border-radius: 10px;
+      background: linear-gradient(to right, var(--blue) 0 33.33%, white 33.33% 66.66%, var(--red) 66.66% 100%);
+      border: 1px solid #0000000d;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .btn { transition: none; }
+      .btn:hover { transform: none; }
+    }
+  </style>
 </head>
 <body>
-<main>
-<header>
-<h1>USABesTRC</h1>
-<p><strong>¡TODO USA, A UN SOLO SCAN!</strong></p>
-<p>Tus marcas favoritas, más cerca de ti 🇺🇸</p>
-</header>
-<div class="links">
-<a href="https://www.facebook.com/share/19iUSp4YR5/?mibextid=wwXIfr" target="_blank" rel="noopener">Visítanos en Facebook</a>
-<a href="https://www.instagram.com/usabestrc?vrfl=MW13MGRrcHZvc29xeA%3D%3D&amp;utm_source=qr" target="_blank" rel="noopener">Síguenos en Instagram</a>
-<a href="https://usa-online-shop.kyte.site" target="_blank" rel="noopener">Explora nuestro catálogo</a>
-</div>
-<footer>Compras americanas · ¡Gracias por visitarnos!</footer>
-</main>
+  <main class="card">
+    <div class="stars" aria-hidden="true">★ ★ ★</div>
+    <h1><span class="usa">USABes</span><span class="trc">TRC</span></h1>
+    <p class="tagline">Tus marcas favoritas 🇺🇸</p>
+    <p class="subtitle">
+      ¡Conéctate con nosotros y descubre todo lo que tenemos para ti!
+    </p>
+
+    <nav class="links" aria-label="Redes sociales y catálogo">
+      <a class="btn facebook"
+         href="https://www.facebook.com/share/19iUSp4YR5/?mibextid=wwXIfr"
+         target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M13.5 21v-8.2h2.8l.4-3.2h-3.2V7.5c0-.9.3-1.6 1.6-1.6h1.7V3.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.3H7.3v3.2h2.8V21h3.4z"/>
+        </svg>
+        Visítanos en Facebook
+      </a>
+
+      <a class="btn instagram"
+         href="https://www.instagram.com/usabestrc?vrfl=MW13MGRrcHZvc29xeA%3D%3D&amp;utm_source=qr"
+         target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7.2 2.5h9.6a4.7 4.7 0 0 1 4.7 4.7v9.6a4.7 4.7 0 0 1-4.7 4.7H7.2a4.7 4.7 0 0 1-4.7-4.7V7.2a4.7 4.7 0 0 1 4.7-4.7zm0 2A2.7 2.7 0 0 0 4.5 7.2v9.6a2.7 2.7 0 0 0 2.7 2.7h9.6a2.7 2.7 0 0 0 2.7-2.7V7.2a2.7 2.7 0 0 0-2.7-2.7H7.2zm4.8 3a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm5-3.1a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2z"/>
+        </svg>
+        Síguenos en Instagram
+      </a>
+
+      <a class="btn catalog"
+         href="https://usa-online-shop.kyte.site"
+         target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 4h-2l-.5 2H2v2h2l2.2 8.2A2.5 2.5 0 0 0 8.6 18h8.8a2.5 2.5 0 0 0 2.4-1.8L22 9H6.1l-.5-2H21V5H7.3L7 4zm2 15a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm8 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/>
+        </svg>
+        Explora nuestro catálogo
+      </a>
+
+      <a class="btn whatsapp"
+         href="https://wa.me/528711178027"
+         target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2a9.7 9.7 0 0 0-8.3 14.7L2.4 22l5.5-1.3A10 10 0 1 0 12 2zm0 2a7.7 7.7 0 0 1 0 15.4 7.6 7.6 0 0 1-3.7-.9l-.4-.2-2.8.7.7-2.7-.3-.5A7.7 7.7 0 0 1 12 4zm-3 3.8c-.2 0-.5.1-.7.4-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 3.9 3.4 1.9.7 2.3.6 2.8.5.4-.1 1.3-.6 1.5-1.1.2-.5.2-1 .1-1.1-.1-.1-.3-.2-.6-.4l-1.4-.7c-.2-.1-.4-.1-.6.2l-.7.8c-.1.2-.3.2-.5.1-.3-.1-1.1-.4-2-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.3.1-.5l.4-.4c.1-.1.2-.3.3-.4.1-.2 0-.3 0-.5l-.6-1.4c-.2-.4-.4-.4-.7-.4h-.1z"/>
+        </svg>
+        Escríbenos por WhatsApp
+      </a>
+
+      <a class="btn tiktok"
+         href="https://www.tiktok.com/@usabestrc"
+         target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M19.6 7.1a6.5 6.5 0 0 1-4.1-1.5v8.1a6.1 6.1 0 1 1-5.3-6V11a2.8 2.8 0 1 0 2.1 2.7V2.5h3.2c.2 2 1.7 3.6 4.1 3.8v.8z"/>
+        </svg>
+        Síguenos en TikTok
+      </a>
+    </nav>
+
+    <p class="footer">COMPRAS AMERICANAS · USABesTRC</p>
+    <div class="flag" aria-hidden="true"></div>
+  </main>
 </body>
 </html>
